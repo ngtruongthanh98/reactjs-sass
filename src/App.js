@@ -1,20 +1,22 @@
 import './App.scss';
-import LoginPage from './pages/Login';
-import MainPage from './pages/Main';
-import SendAssetsPage from './pages/Send';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/Home';
+import SalesPage from './pages/Sales';
+import AboutPage from './pages/About';
+import Navbar from './components/Navbar';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <Navbar />
+
+      <div className="container">
         <Routes>
-          <Route path="login" element={<LoginPage />} />
-          <Route path="main" element={<MainPage />} />
-          <Route path="send" element={<SendAssetsPage />} />
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/sales" element={<SalesPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
-      </BrowserRouter>
+      </div>
     </div>
   );
 }
